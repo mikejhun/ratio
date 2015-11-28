@@ -15,6 +15,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    authorize! :manage, @book
   end
 
   def create
@@ -41,6 +42,7 @@ class BooksController < ApplicationController
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
+    authorize! :manage, @book
   end
 
   def destroy
@@ -49,6 +51,7 @@ class BooksController < ApplicationController
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
+    authorize! :manage, @book
   end
 
   private
