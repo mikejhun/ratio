@@ -1,12 +1,9 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    if current_user
     @books = Book.where(availability:true)
-    else
-      redirect_to new_user_session_path
-    end
   end
 
   def show
@@ -21,7 +18,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.new(book_params)
 
     respond_to do |format|
       if @book.save
