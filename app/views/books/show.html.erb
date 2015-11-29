@@ -7,6 +7,7 @@
     <p><%= @book.description %></p>
     <h3 class='text-center'>$<%= @book.price.to_f / 100 %></h3>
 
+    <% if current_user %>
     <%= form_tag buy_path(slug: @book.slug) do %>
         <form action="" method="POST">
           <script
@@ -19,7 +20,9 @@
           </script>
         </form>
     <% end %>
-
+    <% else %>
+    <p>Please Login First to Buy </p>
+    <% end %>
   </div>
 </div>
 
