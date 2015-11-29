@@ -50,3 +50,4 @@ gem 'coffee-script-source', '1.8.0'
 gem 'devise'
 gem "cancan"
 gem 'paperclip'
+gem 'dotenv-rails', group: :development
