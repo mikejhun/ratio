@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20151129042408) do
 
   create_table "books", force: :cascade do |t|
     t.string   "name"
-    t.string   "location"
+    t.string   "author"
     t.text     "description"
-    t.string   "time"
+    t.integer  "price"
     t.boolean  "availability",          default: true
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
