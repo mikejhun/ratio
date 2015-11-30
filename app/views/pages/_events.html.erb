@@ -2,8 +2,9 @@
 		 		<thead> 
 			 		<tr>
 				 		<th>ID</th> 
-				 		<th>Name</th> 
-				 		<th>Available</th> 
+				 		<th>Event Name</th> 
+				 		<th>Location</th> 
+				 		<th>Date</th> 
 				 		<th></th> 
 			 		</tr> 
 		 		</thead> 
@@ -12,10 +13,10 @@
 			 		<tr>
 				 		<td><%= book.id %></td>
 				 		<td><%= link_to book.name, book_path(book)%></td> 
-				 		<td><%= book.availability %></td> 
+				 		<td><%= book.author %></td> 
+				 		<td><%= time_ago_in_words(book.created_at) %></td> 
 				 		<td><%= link_to 'Edit', edit_book_path(book) %></td> 
 				 	</tr> 
 				 	<% end %>
 		 		</tbody> 
 	 		</table>
-

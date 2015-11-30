@@ -5,7 +5,8 @@
       <% end %>
       <div class='caption'>
         <h4><strong><%= link_to book.name, book_path(book) %></strong></h4>
-        <p>$<%= book.price.to_f / 100 %></p>
+        <p>Location: <%= book.author %></p>
+        <p>Comments: </p>
       </div>
     </div>
 
