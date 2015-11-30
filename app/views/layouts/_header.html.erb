@@ -9,6 +9,16 @@
       </button>
       <%= link_to "<i class='fa fa-users'></i> Ratio".html_safe, root_path, class:'navbar-brand' %>
     </div>
+
+
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+    </form>
+
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
          <li><%= link_to 'Events', books_path %></li>
